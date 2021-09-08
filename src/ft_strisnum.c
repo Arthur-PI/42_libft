@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:19:28 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/07 16:23:15 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/08 11:37:38 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_strisnum(char *s)
 	{
 		if (!ft_isnum(s[i]))
 			return (0);
-		i++
+		i++;
 	}
 	return (1);
 }

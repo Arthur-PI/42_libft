@@ -1,10 +1,36 @@
-SRC_DIR	= src/
+SRC_DIR	= 	src/
 
-DEP_DIR	= include/
+DEP_DIR	= 	include/
 
-OBJ_DIR	= bin/
+OBJ_DIR	= 	bin/
 
-SRCS	= ft_putchar.c ft_putstr.c ft_strlen.c ft_putnbr.c
+SRCS	= 	ft_atoi.c \
+			ft_contains.c \
+			ft_isalpha.c \
+			ft_islower.c \
+			ft_isnum.c \
+			ft_isupper.c \
+			ft_itoa.c \
+			ft_putchar.c \
+			ft_putnbr.c \
+			ft_putstr.c \
+			ft_split.c \
+			ft_strcat.c \
+			ft_strcmp.c \
+			ft_strcpy.c \
+			ft_strdup.c \
+			ft_strisalnum.c \
+			ft_strisalpha.c \
+			ft_strisnum.c \
+			ft_strjoin.c \
+			ft_strlcat.c \
+			ft_strlcpy.c \
+			ft_strlen.c \
+			ft_strncat.c \
+			ft_strncmp.c \
+			ft_strncpy.c \
+			ft_strndup.c \
+			ft_strstr.c
 
 OBJS	= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 

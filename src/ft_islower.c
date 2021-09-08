@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 11:18:06 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/08 11:26:56 by apigeon          ###   ########.fr       */
+/*   Created: 2021/09/08 10:54:54 by apigeon           #+#    #+#             */
+/*   Updated: 2021/09/08 10:55:32 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
-
-char	*ft_strjoin(char **tab, char *sep)
+int	ft_islower(char c)
 {
-	int		i;
-	int		len;
-	char	*res;
-
-	i = 0;
-	len = 0;
-	while (tab[i])
-		len += ft_strlen(tab[i]);
-	len += (i - 1) * ft_strlen(sep);
-	res = malloc(sizeof(*res) * (len + 1));
-	if (!res)
-		return (res);
-	i = 0;
-	while (tab[i])
-	{
-		ft_strcat(res, tab[i]);
-		if (tab[i + 1])
-			ft_strcat(res, sep);
-		i++;
-	}
-	return (res);
+	if (c < 'a' || c > 'z')
+		return (0);
+	return (1);
 }

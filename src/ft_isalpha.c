@@ -6,13 +6,15 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:16:27 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/07 16:18:42 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/08 11:04:00 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalpha(char c)
 {
-	if (c < 'A' || c > 'z' || (c > 'Z' && c < 'a'))
+	if (!ft_islower(c) && !ft_isupper(c))
 		return (0);
 	return (1);
 }

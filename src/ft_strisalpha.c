@@ -6,13 +6,13 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:13:14 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/07 16:19:19 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/08 11:37:23 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(char *s)
+int	ft_strisalpha(char *s)
 {
 	int	i;
 
