@@ -6,14 +6,13 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 11:05:09 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/08 11:36:07 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/08 17:15:31 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-int	count_words(char *s, char *sep)
+static int	count_words(char *s, char *sep)
 {
 	int	i;
 	int	nb_words;

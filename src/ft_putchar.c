@@ -6,11 +6,11 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:32:42 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/07 15:33:36 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/08 17:28:22 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar(char c)
 {

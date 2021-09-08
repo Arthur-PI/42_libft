@@ -6,17 +6,17 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:41:34 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/07 16:43:11 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/08 17:05:23 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	int	i;
 
 	i = 0;
 	while (src[i])
-		dest[i] = src[i];
-	dest[i] = 0;
-	return (dest);
+		dst[i] = src[i];
+	dst[i] = 0;
+	return (dst);
 }

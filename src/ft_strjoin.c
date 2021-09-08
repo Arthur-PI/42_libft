@@ -6,11 +6,10 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 11:18:06 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/08 11:26:56 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/08 17:28:29 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strjoin(char **tab, char *sep)

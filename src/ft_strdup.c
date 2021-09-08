@@ -6,13 +6,13 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:33:16 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/07 17:02:26 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/08 17:03:39 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *s)
+char	*ft_strdup(const char *s)
 {
 	return (ft_strndup(s, ft_strlen(s)));
 }

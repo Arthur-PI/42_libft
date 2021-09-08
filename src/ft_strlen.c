@@ -6,11 +6,11 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:35:19 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/07 15:36:22 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/08 16:53:36 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *s)
+int	ft_strlen(const char *s)
 {
 	int	i;
 

@@ -6,11 +6,11 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:28:13 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/08 11:36:59 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/08 17:01:59 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	int	i;
 
