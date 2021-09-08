@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strisnum.c                                      :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 16:19:28 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/08 11:37:38 by apigeon          ###   ########.fr       */
+/*   Created: 2021/09/08 20:03:50 by apigeon           #+#    #+#             */
+/*   Updated: 2021/09/08 20:06:18 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strisnum(char *s)
+int	ft_isalnum(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (!ft_isnum(s[i]))
-			return (0);
-		i++;
-	}
-	return (1);
+	if (ft_isdigit(c) || ft_isalpha(c))
+		return (1);
+	return (0);
 }

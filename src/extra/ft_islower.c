@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strisalpha.c                                    :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 16:13:14 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/08 11:37:23 by apigeon          ###   ########.fr       */
+/*   Created: 2021/09/08 10:54:54 by apigeon           #+#    #+#             */
+/*   Updated: 2021/09/08 20:07:43 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_strisalpha(char *s)
+int	ft_islower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (!ft_isalpha(s[i]))
-			return (0);
-		i++;
-	}
+	if (c < 'a' || c > 'z')
+		return (0);
 	return (1);
 }

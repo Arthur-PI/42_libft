@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strisalnum.c                                    :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 16:21:10 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/07 16:22:35 by apigeon          ###   ########.fr       */
+/*   Created: 2021/09/08 20:10:28 by apigeon           #+#    #+#             */
+/*   Updated: 2021/09/08 20:11:14 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_strisalnum(char *s)
+int	ft_isprint(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (!ft_isalpha(s[i]) && !ft_isnum(s[i]))
-			return (0);
-		i++;
-	}
-	return (0);
+	if (c < 32 || c > 126)
+		return (0);
+	return (1);
 }

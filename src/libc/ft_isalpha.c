@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isupper.c                                          :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 10:51:11 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/08 10:51:52 by apigeon          ###   ########.fr       */
+/*   Created: 2021/09/07 16:16:27 by apigeon           #+#    #+#             */
+/*   Updated: 2021/09/08 20:06:56 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isupper(char c)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
-	if (c < 'A' || c > 'Z')
-		return (0);
-	return (1);
+	if (ft_islower(c) && ft_isupper(c))
+		return (1);
+	return (0);
 }
