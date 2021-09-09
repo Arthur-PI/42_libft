@@ -106,11 +106,15 @@ $(NAME):		$(OBJ_DIR) $(OBJS)
 			ar rc $(NAME) $(OBJS)
 			ranlib $(NAME)
 
+test:			$(NAME)
+			$(CC) $(CFLAGS) -L. -lft -o test_all main.c
+
 clean:
 			rm -rf bin/
 
 fclean:			clean
 			rm -rf libft.a
+			@rm -f test_all
 
 re:				fclean all
 
