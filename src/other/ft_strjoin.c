@@ -6,33 +6,23 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 11:18:06 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/08 17:28:29 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/09 09:00:03 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char **tab, char *sep)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	int		i;
 	int		len;
 	char	*res;
 
-	i = 0;
-	len = 0;
-	while (tab[i])
-		len += ft_strlen(tab[i]);
-	len += (i - 1) * ft_strlen(sep);
+	len = ft_strlen(s1) + ft_strlen(s2);
 	res = malloc(sizeof(*res) * (len + 1));
 	if (!res)
-		return (res);
-	i = 0;
-	while (tab[i])
-	{
-		ft_strcat(res, tab[i]);
-		if (tab[i + 1])
-			ft_strcat(res, sep);
-		i++;
-	}
+		return (NULL);
+	*res = 0;
+	ft_strcat(res, s1);
+	ft_strcat(res, s2);
 	return (res);
 }

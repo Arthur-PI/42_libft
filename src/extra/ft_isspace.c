@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 09:09:18 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/09 09:17:12 by apigeon          ###   ########.fr       */
+/*   Created: 2021/09/09 09:10:31 by apigeon           #+#    #+#             */
+/*   Updated: 2021/09/09 09:18:03 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	bzero(void *s, size_t n)
+int	isspace(int c)
 {
-	size_t	i;
-	char	*string_s;
-
-	i = 0;
-	string_s = s;
-	while (i < n)
-		string_s[i++] = 0;
+	if ((c >= 9 && c <= 13) || c == 32)
+		return (1);
+	return (0);
 }

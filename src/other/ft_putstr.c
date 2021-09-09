@@ -6,13 +6,13 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:36:29 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/07 15:37:37 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/09 08:55:37 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *s)
+void	ft_putstr(const char *s)
 {
 	int	i;
 

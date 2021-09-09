@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:33:58 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/08 22:51:45 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/09 09:15:23 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 void	ft_bzero(void *s, size_t n);
 
-void	*ft_memccpy(void *dst, cont void *src, int c, size_t n);
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
-void	*ft_memcmp(void *dst, const void * src, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
 
@@ -109,6 +109,7 @@ void	ft_lst_iter(t_list *lst, void (*f)(t_list *));
 int		ft_contains(char *s, char c);
 int		ft_islower(int c);
 int		ft_isupper(int c);
+int		ft_isspace(int c);
 
 char	*ft_strndup(const char *s, size_t n);
 

@@ -77,6 +77,7 @@ BONUS	=	ft_lstadd.c \
 EXTRA	=	ft_contains.c \
 			ft_islower.c \
 			ft_isupper.c \
+			ft_isspace.c \
 			ft_strndup.c
 
 SRCS	=	$(addprefix $(LIBC_DIR), $(LIBC)) \
