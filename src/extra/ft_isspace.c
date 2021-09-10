@@ -6,11 +6,11 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 09:10:31 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/09 09:18:03 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/10 10:50:56 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isspace(int c)
+int	ft_isspace(int c)
 {
 	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);

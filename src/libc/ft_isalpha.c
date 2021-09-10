@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:16:27 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/08 20:06:56 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/10 11:31:29 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalpha(int c)
 {
-	if (ft_islower(c) && ft_isupper(c))
+	if (ft_islower(c) || ft_isupper(c))
 		return (1);
 	return (0);
 }

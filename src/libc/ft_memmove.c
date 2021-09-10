@@ -6,13 +6,13 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 11:53:43 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/09 12:22:14 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/10 10:50:04 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t		i;
 	char		*s_dst;

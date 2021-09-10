@@ -6,13 +6,13 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 12:18:32 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/09 12:19:48 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/10 10:49:00 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	return (ft_strncmp(s1, s2, n));
 }

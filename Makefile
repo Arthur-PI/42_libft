@@ -107,7 +107,7 @@ $(NAME):		$(OBJ_DIR) $(OBJS)
 			ranlib $(NAME)
 
 test:			$(NAME)
-			$(CC) $(CFLAGS) -L. -lft -o test_all main.c
+			$(CC) $(CFLAGS) -fsanitize=address -L. -lft -o test_all main.c
 
 clean:
 			rm -rf bin/

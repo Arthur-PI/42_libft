@@ -6,13 +6,13 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 11:56:10 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/09 12:21:33 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/10 10:49:11 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t		i;
 	char		*s_dst;
