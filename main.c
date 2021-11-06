@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 11:18:03 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/10 11:35:31 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/09/13 12:40:16 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,23 @@ void	test_isdigit(void)
 	print_success("isdigit");
 }
 
+void	test_isprint(void)
+{
+	assert(ft_isprint(' ') == 1);
+	assert(ft_isprint('a') == 1);
+	assert(ft_isprint('~') == 1);
+	assert(ft_isprint('"') == 1);
+	assert(ft_isprint('`') == 1);
+	assert(ft_isprint('!') == 1);
+	assert(ft_isprint('%') == 1);
+	assert(ft_isprint('\000') == 0);
+	assert(ft_isprint('\177') == 0);
+	assert(ft_isprint('\037') == 0);
+	assert(ft_isprint('\177') == 0);
+	assert(ft_isprint('\176') == 1);
+	print_success("isprint");
+}
+
 void	test_strlen(void)
 {
 	assert(ft_strlen("abc") == 3);
@@ -134,6 +151,7 @@ int	main(void)
 	test_isalpha();
 	test_isdigit();
 	test_isalnum();
+	test_isprint();
 	test_atoi();
 	return (0);
 }
