@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 12:24:53 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/10 10:48:49 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/23 09:22:45 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -20,7 +21,10 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	s_s = s;
 	while (i < n)
-		if (s_s[i] == c)
+	{
+		if ((unsigned)s_s[i] == (unsigned)c)
 			return ((void *)s_s + i);
+		i++;
+	}
 	return (NULL);
 }

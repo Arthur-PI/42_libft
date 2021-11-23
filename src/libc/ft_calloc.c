@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 11:50:11 by apigeon           #+#    #+#             */
-/*   Updated: 2021/10/18 11:53:18 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/22 13:50:46 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	int	i;
+	// TODO
+	(void)count;
+	(void)size;
+	return (NULL);
 }

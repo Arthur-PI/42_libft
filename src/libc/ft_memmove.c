@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 11:53:43 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/10 10:50:04 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/23 08:36:25 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = 0;
 	s_dst = dst;
 	s_src = src;
-	if ((size_t)dst > (size_t)src && (size_t)dst - (size_t)src - len < 0)
+	if (!dst && !src)
+		return (NULL);
+	if (src < dst && (size_t)dst - (size_t)src < len)
 	{
-		while (--len >= 0)
-		{
+		while (--len > 0)
 			s_dst[len] = s_src[len];
-			len--;
-		}
+		s_dst[0] = s_src[0];
 	}
 	else
 	{

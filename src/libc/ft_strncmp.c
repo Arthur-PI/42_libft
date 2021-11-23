@@ -3,21 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:30:33 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/08 17:12:29 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/23 11:20:26 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	c1;
+	unsigned char	c2;
 
 	i = 0;
 	while (s1[i] && i < n - 1 && s1[i] == s2[i])
 		i++;
-	return (s1[i] - s2[i]);
+	c1 = (unsigned char) s1[i];
+	c2 = (unsigned char) s2[i];
+	return (c1 - c2);
 }

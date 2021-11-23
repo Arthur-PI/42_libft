@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:33:16 by apigeon           #+#    #+#             */
-/*   Updated: 2021/09/08 17:03:39 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/23 09:29:25 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,15 @@
 
 char	*ft_strdup(const char *s)
 {
-	return (ft_strndup(s, ft_strlen(s)));
+	int 	i;
+	int 	len;
+	char	*new;
+
+	i = 0;
+	len = ft_strlen(s);
+	new = malloc(len + 1);
+	if (new == NULL)
+		return (NULL);
+	ft_strlcpy(new, s, len + 1);
+	return (new);
 }
