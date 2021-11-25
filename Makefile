@@ -8,9 +8,9 @@ PART1_DIR	=	part1/
 
 PART2_DIR	=	part2/
 
-OTHER_DIR	=	other/
-
 BONUS_DIR	=	bonus/
+
+OTHER_DIR	=	other/
 
 EXTRA_DIR	=	extra/
 
@@ -36,18 +36,29 @@ PART1	= 	ft_atoi.c \
 			ft_strnstr.c \
 			ft_strrchr.c \
 			ft_tolower.c \
-			ft_toupper.c
+			ft_toupper.c \
 
-PART2	=	ft_substr \
-			ft_strjoin \
-			ft_strtrim \
-			ft_split \
-			ft_itoa \
-			ft_strmapi \
-			ft_putchar_fd \
-			ft_putstr_fd \
-			ft_putendl_fd \
-			ft_putnbr_fd \
+PART2	=	ft_itoa.c \
+			ft_putchar_fd.c \
+			ft_putendl_fd.c \
+			ft_putnbr_fd.c \
+			ft_putstr_fd.c \
+			ft_split.c \
+			ft_striteri.c \
+			ft_strjoin.c \
+			ft_strmapi.c \
+			ft_strtrim.c \
+			ft_substr.c \
+
+BONUS	=	ft_lstadd_back.c \
+			ft_lstadd_front.c \
+			ft_lstclear.c \
+			ft_lstdelone.c \
+			ft_lstiter.c \
+			ft_lstlast.c \
+			ft_lstmap.c \
+			ft_lstnew.c \
+			ft_lstsize.c \
 
 OTHER	=	ft_itoa.c \
 			ft_memalloc.c \
@@ -72,27 +83,20 @@ OTHER	=	ft_itoa.c \
 			ft_strnew.c \
 			ft_strsplit.c \
 			ft_strsub.c \
-			ft_strtrim.c
+			ft_strtrim.c \
 
-BONUS	=	ft_lstadd.c \
-			ft_lstdel.c \
-			ft_lstdelone.c \
-			ft_lstiter.c \
-			ft_lstmap.c \
-			ft_lstnew.c
 
 EXTRA	=	ft_contains.c \
 			ft_islower.c \
 			ft_isspace.c \
 			ft_isupper.c \
 			ft_strcat.c \
-			ft_strndup.c
+			ft_strndup.c \
 
 SRCS	=	$(addprefix $(PART1_DIR), $(PART1)) \
 			$(addprefix $(PART2_DIR), $(PART2)) \
-			# $(addprefix $(OTHER_DIR), $(OTHER)) \
-			# $(addprefix $(BONUS_DIR), $(BONUS)) \
-			
+			$(addprefix $(BONUS_DIR), $(BONUS)) \
+
 
 OBJS	= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 
@@ -104,9 +108,8 @@ CFLAGS	= -Wall -Wextra -Werror -I$(DEP_DIR)
 
 all:			$(NAME)
 
-
 $(OBJ_DIR):
-			@mkdir -p $@/{$(LIBC_DIR),$(OTHER_DIR),$(BONUS_DIR),$(EXTRA_DIR)}
+			mkdir -p $@/{$(PART1_DIR),$(PART2_DIR),$(BONUS_DIR)}
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 			$(CC) $(CFLAGS) -o $@ -c $<
@@ -114,6 +117,7 @@ $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 $(NAME):		$(OBJ_DIR) $(OBJS)
 			ar rc $(NAME) $(OBJS)
 			ranlib $(NAME)
+
 
 test:			$(NAME)
 			$(CC) $(CFLAGS) -fsanitize=address -L. -lft -o test_all main.c
@@ -126,5 +130,6 @@ fclean:			clean
 			@rm -rf test_all
 
 re:				fclean all
+
 
 .PHONY:			all clean fclean re
