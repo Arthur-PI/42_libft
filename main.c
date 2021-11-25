@@ -3,11 +3,13 @@
 #include "libft.h"
 
 int	main(void) {
-    char n[40] = "99999999999999999999999999";
-	int i1 = atoi(n);
-	int i2 = ft_atoi(n);
+	char	*s = "       split       this   for mee      !      ";
+	char	**res;
 
-    printf("%d\n", i1);
-    printf("%d\n", i2);
+	res = ft_split(s, ' ');
+	for(int i=0; res[i] != 0; i++)
+	{
+		printf("%s\n", res[i]);
+	}
     return (0);
 }

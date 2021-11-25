@@ -2,18 +2,6 @@ SRC_DIR	= 	src/
 
 DEP_DIR	= 	include/
 
-OBJ_DIR	= 	bin/
-
-PART1_DIR	=	part1/
-
-PART2_DIR	=	part2/
-
-BONUS_DIR	=	bonus/
-
-OTHER_DIR	=	other/
-
-EXTRA_DIR	=	extra/
-
 PART1	= 	ft_atoi.c \
 			ft_bzero.c \
 			ft_calloc.c \
@@ -60,70 +48,32 @@ BONUS	=	ft_lstadd_back.c \
 			ft_lstnew.c \
 			ft_lstsize.c \
 
-OTHER	=	ft_itoa.c \
-			ft_memalloc.c \
-			ft_memdel.c \
-			ft_putchar.c \
-			ft_putchar_fd.c \
-			ft_putendl.c \
-			ft_putendl_fd.c \
-			ft_putnbr.c \
-			ft_putnbr_fd.c \
-			ft_putstr.c \
-			ft_putstr_fd.c \
-			ft_strclr.c \
-			ft_strdel.c \
-			ft_strequ.c \
-			ft_striter.c \
-			ft_striteri.c \
-			ft_strjoin.c \
-			ft_strmap.c \
-			ft_strmapi.c \
-			ft_strnequ.c \
-			ft_strnew.c \
-			ft_strsplit.c \
-			ft_strsub.c \
-			ft_strtrim.c \
+SRCS	=	$(PART1) \
+	  		$(PART2) \
+	  		$(BONUS) \
 
-
-EXTRA	=	ft_contains.c \
-			ft_islower.c \
-			ft_isspace.c \
-			ft_isupper.c \
-			ft_strcat.c \
-			ft_strndup.c \
-
-SRCS	=	$(addprefix $(PART1_DIR), $(PART1)) \
-			$(addprefix $(PART2_DIR), $(PART2)) \
-			$(addprefix $(BONUS_DIR), $(BONUS)) \
-
-
-OBJS	= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
+OBJS	= $(SRCS:.c=.o)
 
 NAME	= libft.a
 
-CC		= gcc
+CC		= clang
 
 CFLAGS	= -Wall -Wextra -Werror -I$(DEP_DIR)
 
 all:			$(NAME)
 
-$(OBJ_DIR):
-			mkdir -p $@/{$(PART1_DIR),$(PART2_DIR),$(BONUS_DIR)}
-
-$(OBJ_DIR)%.o:	$(SRC_DIR)%.c
-			$(CC) $(CFLAGS) -o $@ -c $<
-
-$(NAME):		$(OBJ_DIR) $(OBJS)
+$(NAME):		$(OBJS)
 			ar rc $(NAME) $(OBJS)
-			ranlib $(NAME)
 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 test:			$(NAME)
 			$(CC) $(CFLAGS) -fsanitize=address -L. -lft -o test_all main.c
 
 clean:
-			rm -rf bin/
+			rm -f *.o
 
 fclean:			clean
 			rm -rf libft.a
