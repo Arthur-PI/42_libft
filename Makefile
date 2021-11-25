@@ -4,7 +4,9 @@ DEP_DIR	= 	include/
 
 OBJ_DIR	= 	bin/
 
-LIBC_DIR	=	libc/
+PART1_DIR	=	part1/
+
+PART2_DIR	=	part2/
 
 OTHER_DIR	=	other/
 
@@ -12,7 +14,7 @@ BONUS_DIR	=	bonus/
 
 EXTRA_DIR	=	extra/
 
-LIBC	= 	ft_atoi.c \
+PART1	= 	ft_atoi.c \
 			ft_bzero.c \
 			ft_calloc.c \
 			ft_isalnum.c \
@@ -35,6 +37,17 @@ LIBC	= 	ft_atoi.c \
 			ft_strrchr.c \
 			ft_tolower.c \
 			ft_toupper.c
+
+PART2	=	ft_substr \
+			ft_strjoin \
+			ft_strtrim \
+			ft_split \
+			ft_itoa \
+			ft_strmapi \
+			ft_putchar_fd \
+			ft_putstr_fd \
+			ft_putendl_fd \
+			ft_putnbr_fd \
 
 OTHER	=	ft_itoa.c \
 			ft_memalloc.c \
@@ -75,8 +88,8 @@ EXTRA	=	ft_contains.c \
 			ft_strcat.c \
 			ft_strndup.c
 
-SRCS	=	$(addprefix $(LIBC_DIR), $(LIBC)) \
-			$(addprefix $(EXTRA_DIR), $(EXTRA)) \
+SRCS	=	$(addprefix $(PART1_DIR), $(PART1)) \
+			$(addprefix $(PART2_DIR), $(PART2)) \
 			# $(addprefix $(OTHER_DIR), $(OTHER)) \
 			# $(addprefix $(BONUS_DIR), $(BONUS)) \
 			
