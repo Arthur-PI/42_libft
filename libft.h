@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:33:58 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/25 20:51:46 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/26 17:09:07 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
 
@@ -56,14 +57,11 @@ char	*ft_strstr(const char *haystack, const char *needle);
 // ==== Other usefull functions ====
 
 void	ft_memdel(void **ap);
-void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
-void	ft_putendl(const char *s);
-void	ft_putendl_fd(const char *s, int fd);
-void	ft_putnbr(int n);
+void	ft_putendl(char *s);
+void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-void	ft_putstr(const char *s);
-void	ft_putstr_fd(const char *s, int fd);
+void	ft_putstr_fd(char *s, int fd);
 void	ft_strclr(char *s);
 void	ft_strdel(char *as);
 void	ft_striter(char *s, void (*f)(char *));

@@ -2,14 +2,13 @@
 #include <stdio.h>
 #include "libft.h"
 
-int	main(void) {
-	char	*s = "       split       this   for mee      !      ";
-	char	**res;
+static char	cesar(unsigned int nul, char c)
+{
+	(void)nul;
+	return (((c - 'a') + 1) % 25 + 'a');
+}
 
-	res = ft_split(s, ' ');
-	for(int i=0; res[i] != 0; i++)
-	{
-		printf("%s\n", res[i]);
-	}
-    return (0);
+int	main(void) {
+	printf("%s\n", ft_strmapi("oui", &cesar));
+	return (0);
 }
