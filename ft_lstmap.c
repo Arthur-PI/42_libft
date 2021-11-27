@@ -6,7 +6,7 @@
 /*   By: apigeon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 17:23:42 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/27 18:05:49 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/27 20:31:47 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*first;
 	t_list	*elem;
 
+	if (!lst)
+		return (NULL);
 	first = ft_lstnew((*f)(lst->content));
 	if (!first)
 		return (NULL);

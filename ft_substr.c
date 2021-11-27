@@ -6,7 +6,7 @@
 /*   By: apigeon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 12:29:38 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/27 18:11:08 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/27 20:39:17 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub_s;
 
 	if (!s)
-		(NULL);
+		return (NULL);
 	i = start;
 	str_len = ft_strlen(s);
 	if (start >= str_len)

@@ -6,7 +6,7 @@
 /*   By: apigeon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 17:22:03 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/27 17:23:31 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/27 20:36:28 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while(lst)
-	{
-		(*f)(lst->content);
-		lst = lst->next;
-	}
+	if (lst)
+		while(lst)
+		{
+			(*f)(lst->content);
+			lst = lst->next;
+		}
 }

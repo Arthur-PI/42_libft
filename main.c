@@ -3,11 +3,10 @@
 #include "libft.h"
 
 int	main(void) {
-	char *s;
+	char	*s1 = "wgw";
+	char	*s2 = "";
 
-	s = ft_itoa(2147483647);
- 	printf("%s\n", s);
-	strlcpy(s, s, 1245151521);
-	free(s);
+
+ 	printf("%s\n", strnstr(s1, s2, 0));
 	return (0);
 }

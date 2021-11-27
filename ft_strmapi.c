@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 17:39:53 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/26 17:52:08 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/27 20:33:53 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 	char	*s_cpy;
 
+	if (!s)
+		return (NULL);
 	s_cpy = malloc(ft_strlen(s) + 1);
 	if (!s_cpy)
 		return (NULL);

@@ -72,9 +72,13 @@ so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
 	$(CC) -nostartfiles -shared -o libft.so $(OBJS)
 
-test:			$(NAME)
-			$(CC) $(CFLAGS) -fsanitize=address -c main.c -o test.o
-			$(CC) $(CFLAGS) -fsanitize=address -o test test.o -L. -lft
+cleantest:
+	@rm test test.o
+
+test:			cleantest $(NAME)
+			@$(CC) $(CFLAGS) -fsanitize=address -c main.c -o test.o
+			@$(CC) $(CFLAGS) -fsanitize=address -o test test.o -L. -lft
+			./test
 
 clean:
 			rm -f *.o
