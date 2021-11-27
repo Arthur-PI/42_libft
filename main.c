@@ -2,13 +2,12 @@
 #include <stdio.h>
 #include "libft.h"
 
-static char	cesar(unsigned int nul, char c)
-{
-	(void)nul;
-	return (((c - 'a') + 1) % 25 + 'a');
-}
-
 int	main(void) {
-	printf("%s\n", ft_strmapi("oui", &cesar));
+	char *s;
+
+	s = ft_itoa(2147483647);
+ 	printf("%s\n", s);
+	strlcpy(s, s, 1245151521);
+	free(s);
 	return (0);
 }

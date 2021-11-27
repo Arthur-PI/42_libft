@@ -1,7 +1,5 @@
 SRC_DIR	= 	src/
 
-DEP_DIR	= 	include/
-
 PART1	= 	ft_atoi.c \
 			ft_bzero.c \
 			ft_calloc.c \
@@ -51,27 +49,32 @@ BONUS	=	ft_lstadd_back.c \
 
 SRCS	=	$(PART1) \
 	  		$(PART2) \
-	  		$(BONUS) \
 
 OBJS	= $(SRCS:.c=.o)
+
+B_OBJS	= $(BONUS:.c=.o)
 
 NAME	= libft.a
 
 CC		= clang
 
-CFLAGS	= -Wall -Wextra -Werror -I$(DEP_DIR)
+CFLAGS	= -Wall -Wextra -Werror
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
 			ar rc $(NAME) $(OBJS)
 
+bonus:			$(OBJS) $(B_OBJS)
+			ar rc $(NAME) $(OBJS) $(B_OBJS)
+
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+	$(CC) -nostartfiles -shared -o libft.so $(OBJS)
 
 test:			$(NAME)
-			$(CC) $(CFLAGS) -fsanitize=address -L. -lft -o test_all main.c
+			$(CC) $(CFLAGS) -fsanitize=address -c main.c -o test.o
+			$(CC) $(CFLAGS) -fsanitize=address -o test test.o -L. -lft
 
 clean:
 			rm -f *.o

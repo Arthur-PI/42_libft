@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 11:05:09 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/26 15:54:26 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/27 15:32:57 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	count_words(const char *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 		nb_words++;
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
 	}
 	return (nb_words);
@@ -62,7 +62,7 @@ char	**ft_split(const char *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 		*(tab++) = strndupl(s + word_start, i - word_start);
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
 	}
 	*tab = 0;

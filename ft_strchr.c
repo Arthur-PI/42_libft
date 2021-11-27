@@ -6,7 +6,7 @@
 /*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 08:43:08 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/23 11:47:29 by arthur           ###   ########.fr       */
+/*   Updated: 2021/11/27 15:07:02 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int				i;
+	unsigned char	uc;
+	unsigned char	*us;
 
-	if (ft_isascii(c))
+	uc = (unsigned char)c;
+	us = (unsigned char*)s;
+	if (ft_isascii(uc))
 	{
 		i = 0;
-		while (s[i])
+		while (us[i])
 		{
-			if (s[i] == c)
+			if (us[i] == uc)
 				return ((char *)s + i);
 			i++;
 		}
-		if (s[i] == c)
+		if (us[i] == uc)
 			return ((char *)s + i);
 	}
 	return (NULL);
