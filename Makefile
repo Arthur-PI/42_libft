@@ -69,11 +69,11 @@ bonus:			$(OBJS) $(B_OBJS)
 			ar rc $(NAME) $(OBJS) $(B_OBJS)
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	$(CC) -nostartfiles -shared -o libft.so $(OBJS)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
+	$(CC) -nostartfiles -shared -o libft.so $(OBJS) $(B_OBJS)
 
 cleantest:
-	@rm test test.o
+	@rm -f test test.o
 
 test:			cleantest $(NAME)
 			@$(CC) $(CFLAGS) -fsanitize=address -c main.c -o test.o
@@ -87,7 +87,7 @@ fclean:			clean
 			rm -rf libft.a
 			@rm -rf test_all
 
-re:				fclean all
+re:				fclean bonus
 
 
 .PHONY:			all clean fclean re
