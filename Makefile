@@ -11,7 +11,6 @@ PART1	= 	ft_atoi.c \
 			ft_memchr.c \
 			ft_memcmp.c \
 			ft_memcpy.c \
-			ft_memccpy.c \
 			ft_memmove.c \
 			ft_memset.c \
 			ft_strchr.c \
@@ -87,7 +86,7 @@ fclean:			clean
 			rm -rf libft.a
 			@rm -rf test_all
 
-re:				fclean bonus
+re:				fclean all
 
 
 .PHONY:			all clean fclean re
