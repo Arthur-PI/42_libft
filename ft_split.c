@@ -6,12 +6,11 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 11:05:09 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/27 20:28:55 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/29 13:25:46 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static char	*strndupl(const char *s, size_t n)
 {

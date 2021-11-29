@@ -6,7 +6,7 @@
 /*   By: apigeon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:52:47 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/27 17:37:41 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/28 15:32:48 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *new;
+	t_list	*new;
 
 	new = malloc(sizeof(*new));
 	if (!new)

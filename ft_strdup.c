@@ -6,7 +6,7 @@
 /*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:33:16 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/23 09:29:25 by arthur           ###   ########.fr       */
+/*   Updated: 2021/11/28 15:30:46 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *s)
 {
-	int 	i;
-	int 	len;
+	int		i;
+	int		len;
 	char	*new;
 
 	i = 0;

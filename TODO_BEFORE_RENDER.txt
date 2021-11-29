@@ -1,5 +1,0 @@
-check norminette
-check les 2 unit tests
-check author file
-virer les fichiers de test et la regle dans le makefile
-

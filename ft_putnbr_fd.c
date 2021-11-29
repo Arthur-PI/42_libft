@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 17:02:43 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/26 17:36:56 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/28 15:21:38 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long nbr;
+	long	nbr;
 
 	nbr = n;
 	if (nbr < 0)

@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 17:58:55 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/27 18:12:10 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/28 15:32:36 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	get_end(const char *s1, const char *set)
 	int	i;
 
 	i = ft_strlen(s1) - 1;
-	while(i >= 0 && contain(set, s1[i]))
+	while (i >= 0 && contain(set, s1[i]))
 		i--;
 	return (i);
 }
@@ -49,8 +49,7 @@ static int	get_start(const char *s1, const char *set)
 	return (i);
 }
 
-
-char *ft_strtrim(const char *s1, const char *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	int		i;
 	int		start;
