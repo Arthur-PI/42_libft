@@ -67,9 +67,6 @@ $(NAME):		$(OBJS)
 bonus:			$(OBJS) $(B_OBJS)
 			ar rc $(NAME) $(OBJS) $(B_OBJS)
 
-test:			$(NAME)
-			$(CC) $(CFLAGS) -o test main.c libft.a
-
 clean:
 			rm -f *.o
 
