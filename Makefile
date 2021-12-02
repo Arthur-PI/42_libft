@@ -67,17 +67,8 @@ $(NAME):		$(OBJS)
 bonus:			$(OBJS) $(B_OBJS)
 			ar rc $(NAME) $(OBJS) $(B_OBJS)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
-	$(CC) -nostartfiles -shared -o libft.so $(OBJS) $(B_OBJS)
-
-cleantest:
-	@rm -f test test.o
-
-test:			cleantest $(NAME)
-			@$(CC) $(CFLAGS) -fsanitize=address -c main.c -o test.o
-			@$(CC) $(CFLAGS) -fsanitize=address -o test test.o -L. -lft
-			./test
+test:			$(NAME)
+			$(CC) $(CFLAGS) -o test main.c libft.a
 
 clean:
 			rm -f *.o

@@ -6,7 +6,7 @@
 /*   By: apigeon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 17:14:33 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/27 17:21:28 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/28 15:33:45 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*next;
 
-	while(*lst)
+	while (*lst)
 	{
 		next = (*lst)->next;
 		ft_lstdelone(*lst, del);

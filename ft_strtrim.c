@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 17:58:55 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/27 18:12:10 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/12/01 11:17:45 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	get_end(const char *s1, const char *set)
 	int	i;
 
 	i = ft_strlen(s1) - 1;
-	while(i >= 0 && contain(set, s1[i]))
+	while (i >= 0 && contain(set, s1[i]))
 		i--;
 	return (i);
 }
@@ -49,8 +49,7 @@ static int	get_start(const char *s1, const char *set)
 	return (i);
 }
 
-
-char *ft_strtrim(const char *s1, const char *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	int		i;
 	int		start;
@@ -61,7 +60,7 @@ char *ft_strtrim(const char *s1, const char *set)
 		return (NULL);
 	start = get_start(s1, set);
 	if (start == EMPTY)
-		return (calloc(1, 1));
+		return (ft_calloc(1, 1));
 	end = get_end(s1, set) + 1;
 	s1_trim = malloc((end - start) + 1);
 	if (!s1_trim)

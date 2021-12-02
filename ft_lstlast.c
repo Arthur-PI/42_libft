@@ -6,7 +6,7 @@
 /*   By: apigeon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:59:22 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/27 17:49:51 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/28 15:33:38 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while(lst && lst->next)
+	while (lst && lst->next)
 		lst = lst->next;
 	return (lst);
 }

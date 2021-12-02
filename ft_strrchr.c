@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 08:46:12 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/27 15:11:19 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/28 15:30:25 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	unsigned char	*us;
 
 	uc = (unsigned char)c;
-	us = (unsigned char*)s;
+	us = (unsigned char *)s;
 	if (ft_isascii(uc))
 	{
 		i = ft_strlen(s);
