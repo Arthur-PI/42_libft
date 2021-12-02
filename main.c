@@ -10,22 +10,19 @@
 #include "libft.h"
 
 int	main(void) {
-	char	*s;
+	char	*s = "  tripouille  42  ";
 	char	c = ' ';
 	char	**tab;
-	int		n = 999999;
 
 
-	s = malloc(n + 1);
-	int i = 0;
-	while (i < n)
-	{
-		s[i++] = 'a';
-		s[i++] = ' ';
-	}
-	s[i] = 0;
 	tab = ft_split(s, c);
-	printf("%p\n", tab);
-	free(s);
+	int i = 0;
+	while (tab[i])
+	{
+		printf("%s\n", tab[i]);
+		//free(tab[i++]);
+		i++;
+	}
+	//free(tab);
 	return (0);
 }
