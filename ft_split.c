@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 11:05:09 by apigeon           #+#    #+#             */
-/*   Updated: 2021/12/02 13:34:58 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/12/02 14:24:01 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ static int	extract_words(const char *s, char c, char **tab)
 		while (s[i] && s[i] != c)
 			i++;
 		tab[word] = strndupl(s + word_start, i - word_start);
-		//printf("Un mot de plus !i;%s\n", tab[word]);
 		if (tab[word] == NULL)
 			return (ERROR);
 		word++;
@@ -80,7 +79,6 @@ char	**ft_split(const char *s, char c)
 	while (s[i] && s[i] == c)
 		i++;
 	nb_words = count_words((char *)s + i, c);
-	//printf("nb_words = %d\n", nb_words);
 	tab = malloc(sizeof(*tab) * (nb_words + 1));
 	if (!tab)
 		return (NULL);
