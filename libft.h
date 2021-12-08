@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:33:58 by apigeon           #+#    #+#             */
-/*   Updated: 2021/12/02 13:00:04 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/12/02 14:24:50 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-
-# include <stdio.h>
 
 // ==== Part 1 functions ====
 
@@ -49,7 +47,6 @@ char	*ft_strdup(const char *s);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
 
-
 // ==== Part 2 functions ====
 
 void	ft_putchar_fd(char c, int fd);
@@ -69,7 +66,7 @@ char	**ft_split(const char *s, char c);
 
 // ==== Bonus functions ====
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -82,7 +79,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
-int	ft_lstsize(t_list *lst);
+int		ft_lstsize(t_list *lst);
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);

@@ -67,18 +67,11 @@ $(NAME):		$(OBJS)
 bonus:			$(OBJS) $(B_OBJS)
 			ar rc $(NAME) $(OBJS) $(B_OBJS)
 
-cleantest:
-			rm -f tests
-
-test:		$(cleantest) $(NAME)
-			$(CC) $(CFLAGS) -o tests main.c libft.a
-
 clean:
 			rm -f *.o
 
 fclean:			clean
 			rm -rf libft.a
-			@rm -rf test_all
 
 re:				fclean all
 

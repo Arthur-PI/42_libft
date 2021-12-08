@@ -6,7 +6,7 @@
 /*   By: apigeon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 13:56:43 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/27 20:36:17 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/12/08 16:28:42 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i = 0;
 		while (s[i])
 		{
-			(*f)(i, s + i);
+			f(i, s + i);
 			i++;
 		}
 	}
