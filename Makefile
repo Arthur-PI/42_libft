@@ -55,7 +55,7 @@ B_OBJS	= $(BONUS:.c=.o)
 
 NAME	= libft.a
 
-CC		= clang
+CC		= cc
 
 CFLAGS	= -Wall -Wextra -Werror
 
