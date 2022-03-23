@@ -1,15 +1,31 @@
-SRC_DIR	= 	src/
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/03/23 16:16:39 by apigeon           #+#    #+#              #
+#    Updated: 2022/03/23 16:30:31 by apigeon          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-DEP_DIR	=	./
+### COMPILATION ###
+CC		= cc
+CFLAGS	= -Wall -Werror -Wextra
 
-OBJ_DIR	=	bin/
+### EXECUTABLE ###
+NAME	= libft.a
 
-BASE_DIR	=	base/
+### INCLUDES ###
+HEADER		= .
+SRC_DIR		= src
+OBJ_DIR		= bin
+BASE_DIR	= base
+BONUS_DIR	= bonus
+ADDON_DIR	= addon
 
-BONUS_DIR	=	bonus/
-
-ADDON_DIR	=	addon/
-
+### SOURCE FILES ###
 BASE	= 	ft_atoi.c \
 			ft_bzero.c \
 			ft_calloc.c \
@@ -43,7 +59,7 @@ BASE	= 	ft_atoi.c \
 			ft_strjoin.c \
 			ft_strmapi.c \
 			ft_strtrim.c \
-			ft_substr.c \
+			ft_substr.c
 
 BONUS	=	ft_lstadd_back.c \
 			ft_lstadd_front.c \
@@ -53,50 +69,62 @@ BONUS	=	ft_lstadd_back.c \
 			ft_lstlast.c \
 			ft_lstmap.c \
 			ft_lstnew.c \
-			ft_lstsize.c \
+			ft_lstsize.c
 
-ADDON	=	ft_putchar.c \
+ADDON	=	ft_putchar.c
 
-SRCS	=	$(addprefix $(BASE_DIR), $(BASE))
-A_SRCS	=	$(addprefix $(ADDON_DIR), $(ADDON))
-B_SRCS	=	$(addprefix $(BONUS_DIR), $(BONUS))
+SRCS	=	$(addprefix $(BASE_DIR)/, $(BASE))
+A_SRCS	=	$(addprefix $(ADDON_DIR)/, $(ADDON))
+B_SRCS	=	$(addprefix $(BONUS_DIR)/, $(BONUS))
 
-OBJS	=	$(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
-B_OBJS	=	$(addprefix $(OBJ_DIR), $(B_SRCS:.c=.o))
-A_OBJS	=	$(addprefix $(OBJ_DIR), $(A_SRCS:.c=.o))
+### OBJECTS ###
+OBJS	=	$(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
+B_OBJS	=	$(addprefix $(OBJ_DIR)/, $(B_SRCS:.c=.o))
+A_OBJS	=	$(addprefix $(OBJ_DIR)/, $(A_SRCS:.c=.o))
 
-NAME	=	libft.a
+### COLORS ###
+NOC		= \033[0m
+BLACK	= \033[1;30m
+RED		= \033[1;31m
+GREEN	= \033[1;32m
+YELLOW	= \033[1;33m
+BLUE	= \033[1;34m
+PURPLE	= \033[1;35m
+CYAN	= \033[1;36m
+WHITE	= \033[1;37m
 
-CC		=	cc
-
-CFLAGS	=	-Wall -Wextra -Werror -I$(DEP_DIR)
-
-all:			$(NAME)
+### RULES ###
+all:	$(NAME)
 
 $(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)$(BASE_DIR)
-	mkdir -p $(OBJ_DIR)$(BONUS_DIR)
-	mkdir -p $(OBJ_DIR)$(ADDON_DIR)
+	@mkdir -p $(OBJ_DIR)/$(BASE_DIR)
+	@mkdir -p $(OBJ_DIR)/$(BONUS_DIR)
+	@mkdir -p $(OBJ_DIR)/$(ADDON_DIR)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
+	@$(CC) $(CFLAGS) -I$(HEADER) -o $@ -c $<
+	@echo "$(BLUE)Creating object file -> $(WHITE)$(notdir $@)... $(GREEN)[Done]$(NOC)"
 
-$(NAME):		$(OBJ_DIR) $(OBJS)
-			ar rc $(NAME) $(OBJS)
+$(NAME):	$(OBJ_DIR) $(OBJS)
+	@ar rc $(NAME) $(OBJS)
+	@echo "$(GREEN)Lib successfully compiled$(NOC)"
 
-bonus:			$(NAME) $(B_OBJS)
-			ar rc $(NAME) $(B_OBJS)
+bonus:	$(NAME) $(B_OBJS)
+	@ar rc $(NAME) $(B_OBJS)
+	@echo "$(GREEN)Lib with bonus successfully compiled$(NOC)"
 
-addon:			$(bonus) $(A_OBJS)
-			ar rc $(NAME) $(A_OBJS)
+addon:	bonus $(A_OBJS)
+	@ar rc $(NAME) $(A_OBJS)
+	@echo "$(GREEN)Lib with addons successfully compiled$(NOC)"
 
 clean:
-			rm -rf $(OBJ_DIR)
+	@echo "$(RED)Supressing object files$(NOC)"
+	@rm -rf $(OBJ_DIR)
 
-fclean:			clean
-			rm -f libft.a
+fclean:	clean
+	@echo "$(RED)Supressing lib file$(NOC)"
+	@rm -f libft.a
 
-re:				fclean all
+re:	fclean all
 
-
-.PHONY:			all clean fclean re
+.PHONY:	all clean fclean re
