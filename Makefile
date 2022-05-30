@@ -6,7 +6,7 @@
 #    By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/23 16:16:39 by apigeon           #+#    #+#              #
-#    Updated: 2022/03/23 16:30:31 by apigeon          ###   ########.fr        #
+#    Updated: 2022/05/30 21:45:40 by apigeon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,13 @@ CFLAGS	= -Wall -Werror -Wextra
 NAME	= libft.a
 
 ### INCLUDES ###
-HEADER		= .
+HEADER		= incl
 SRC_DIR		= src
 OBJ_DIR		= bin
 BASE_DIR	= base
 BONUS_DIR	= bonus
 ADDON_DIR	= addon
+PRINTF_DIR	= printf
 
 ### SOURCE FILES ###
 BASE	= 	ft_atoi.c \
@@ -71,16 +72,28 @@ BONUS	=	ft_lstadd_back.c \
 			ft_lstnew.c \
 			ft_lstsize.c
 
-ADDON	=	ft_putchar.c
+ADDON	=	ft_putchar.c \
+			get_next_line.c \
+			get_next_line_utils.c
+
+PRINTF	=	ft_printf.c \
+			buffer_handler.c \
+			option_char.c \
+			option_hex.c \
+			option_number.c \
+			option_pointer.c \
+			option_string.c
 
 SRCS	=	$(addprefix $(BASE_DIR)/, $(BASE))
 A_SRCS	=	$(addprefix $(ADDON_DIR)/, $(ADDON))
 B_SRCS	=	$(addprefix $(BONUS_DIR)/, $(BONUS))
+P_SRCS	=	$(addprefix $(PRINTF_DIR)/, $(PRINTF))
 
 ### OBJECTS ###
 OBJS	=	$(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 B_OBJS	=	$(addprefix $(OBJ_DIR)/, $(B_SRCS:.c=.o))
 A_OBJS	=	$(addprefix $(OBJ_DIR)/, $(A_SRCS:.c=.o))
+P_OBJS	=	$(addprefix $(OBJ_DIR)/, $(P_SRCS:.c=.o))
 
 ### COLORS ###
 NOC		= \033[0m
@@ -100,6 +113,7 @@ $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)/$(BASE_DIR)
 	@mkdir -p $(OBJ_DIR)/$(BONUS_DIR)
 	@mkdir -p $(OBJ_DIR)/$(ADDON_DIR)
+	@mkdir -p $(OBJ_DIR)/$(PRINTF_DIR)
 
 $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
 	@$(CC) $(CFLAGS) -I$(HEADER) -o $@ -c $<
@@ -113,8 +127,8 @@ bonus:	$(NAME) $(B_OBJS)
 	@ar rc $(NAME) $(B_OBJS)
 	@echo "$(GREEN)Lib with bonus successfully compiled$(NOC)"
 
-addon:	bonus $(A_OBJS)
-	@ar rc $(NAME) $(A_OBJS)
+addon:	bonus $(A_OBJS) $(P_OBJS)
+	@ar rc $(NAME) $(A_OBJS) $(P_OBJS)
 	@echo "$(GREEN)Lib with addons successfully compiled$(NOC)"
 
 clean:
