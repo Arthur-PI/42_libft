@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:33:58 by apigeon           #+#    #+#             */
-/*   Updated: 2022/05/30 19:37:29 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/05/30 22:04:42 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 
 # include "ft_printf.h"
+# include "get_next_line.h"
 
 // ==== Part 1 functions ====
 
