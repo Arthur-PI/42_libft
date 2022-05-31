@@ -6,13 +6,13 @@
 /*   By: apigeon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 19:46:54 by apigeon           #+#    #+#             */
-/*   Updated: 2022/05/30 21:43:47 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/05/31 12:36:02 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strlen(const char *s)
+int	ft_strlen2(const char *s)
 {
 	int	i;
 
