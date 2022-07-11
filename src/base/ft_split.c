@@ -6,22 +6,30 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 11:05:09 by apigeon           #+#    #+#             */
-/*   Updated: 2021/12/02 14:24:01 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/07/11 15:19:47 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 #define ERROR 1
 #define SUCCESS 0
 
 static char	*strndupl(const char *s, size_t n)
 {
+	size_t	i;
 	char	*dup;
 
 	dup = malloc(sizeof(*dup) * (n + 1));
 	if (!dup)
 		return (NULL);
-	ft_strlcpy(dup, s, n + 1);
+	i = 0;
+	while (i < n)
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = 0;
 	return (dup);
 }
 
