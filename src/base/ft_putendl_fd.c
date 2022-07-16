@@ -6,13 +6,13 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 16:59:53 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/27 20:31:11 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/07/16 10:59:48 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(const char *s, int fd)
 {
 	if (s)
 	{

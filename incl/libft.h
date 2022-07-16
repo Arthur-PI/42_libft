@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:33:58 by apigeon           #+#    #+#             */
-/*   Updated: 2022/05/30 22:04:42 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/07/16 11:02:27 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,16 @@ char	*ft_strrchr(const char *s, int c);
 // ==== Part 2 functions ====
 
 void	ft_putchar_fd(char c, int fd);
-void	ft_putendl_fd(char *s, int fd);
+void	ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-void	ft_putstr_fd(char *s, int fd);
+void	ft_putstr_fd(const char *s, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 char	*ft_itoa(int n);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char	*ft_strnew(size_t size);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strtrim(const char *s, const char *set);
 
 char	**ft_split(const char *s, char c);
@@ -87,5 +87,13 @@ int		ft_lstsize(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
+
+// ==== Addon fucntions ====
+
+void	ft_putchar(char c);
+void	ft_putendl(const char *s);
+int		ft_abs(int n);
+int		ft_min(int a, int b);
+int		ft_max(int a, int b);
 
 #endif

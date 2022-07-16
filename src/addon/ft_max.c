@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 16:58:26 by apigeon           #+#    #+#             */
-/*   Updated: 2022/07/16 11:00:15 by apigeon          ###   ########.fr       */
+/*   Created: 2022/07/16 10:54:17 by apigeon           #+#    #+#             */
+/*   Updated: 2022/07/16 10:54:43 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putstr_fd(const char *s, int fd)
+int	ft_max(int a, int b)
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
+	if (a < b)
+		return (b);
+	return (a);
 }
