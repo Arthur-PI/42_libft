@@ -6,11 +6,11 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 10:53:50 by apigeon           #+#    #+#             */
-/*   Updated: 2022/07/16 10:54:12 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/07/16 12:45:14 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	min(int a, int b)
+int	ft_min(int a, int b)
 {
 	if (a < b)
 		return (a);
