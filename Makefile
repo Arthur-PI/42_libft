@@ -6,7 +6,7 @@
 #    By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/23 16:16:39 by apigeon           #+#    #+#              #
-#    Updated: 2022/07/16 11:29:13 by apigeon          ###   ########.fr        #
+#    Updated: 2022/07/16 11:40:41 by apigeon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -132,11 +132,11 @@ addon:	bonus $(A_OBJS) $(P_OBJS) $(HEADER)/ft_printf.h $(HEADER)/get_next_line.h
 	@echo "$(GREEN)Libft compiled with addons$(NOC)"
 
 clean:
-	@echo "$(RED)Supressing libft object files$(NOC)"
+	@echo "$(RED)Supressing $(NOC)libft $(RED)object files$(NOC)"
 	@rm -rf $(OBJ_DIR)
 
 fclean:	clean
-	@echo "$(RED)Supressing $(NAME) file$(NOC)"
+	@echo "$(RED)Supressing $(NOC)$(NAME) $(RED)file$(NOC)"
 	@rm -f $(NAME)
 
 re:	fclean all
