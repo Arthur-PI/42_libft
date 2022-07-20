@@ -6,7 +6,7 @@
 #    By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/23 16:16:39 by apigeon           #+#    #+#              #
-#    Updated: 2022/07/20 18:15:09 by apigeon          ###   ########.fr        #
+#    Updated: 2022/07/20 18:18:03 by apigeon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -133,7 +133,7 @@ bonus:	$(NAME) $(B_OBJS) $(HEADER)/libft.h
 
 addon:	bonus $(A_OBJS) $(P_OBJS) $(HEADER)/ft_printf.h $(HEADER)/get_next_line.h
 	@ar rc $(NAME) $(A_OBJS) $(P_OBJS)
-	@echo "libft: $(GREEN)Libft compiled with addons$(NOC)"
+	@echo "libft: $(GREEN)Compiled with addons$(NOC)"
 
 clean:
 	@echo "libft: $(RED)Supressing object files$(NOC)"
