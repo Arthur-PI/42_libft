@@ -6,7 +6,7 @@
 #    By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/23 16:16:39 by apigeon           #+#    #+#              #
-#    Updated: 2022/07/16 12:42:53 by apigeon          ###   ########.fr        #
+#    Updated: 2022/07/20 18:15:09 by apigeon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,26 +121,26 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
 	@$(CC) $(CFLAGS) -I$(HEADER) -o $@ -c $<
-	@echo "$(BLUE)Creating object file -> $(WHITE)$(notdir $@)... $(GREEN)[Done]$(NOC)"
+	@echo "libft: $(BLUE)Creating object file -> $(WHITE)$(notdir $@)... $(GREEN)[Done]$(NOC)"
 
 $(NAME):	$(OBJ_DIR) $(OBJS) $(HEADER)/libft.h
 	@ar rc $(NAME) $(OBJS)
-	@echo "$(GREEN)Libft successfully compiled$(NOC)"
+	@echo "libft: $(GREEN)Successfully compiled$(NOC)"
 
 bonus:	$(NAME) $(B_OBJS) $(HEADER)/libft.h
 	@ar rc $(NAME) $(B_OBJS)
-	@echo "$(GREEN)Libft compiled with bonus$(NOC)"
+	@echo "libft: $(GREEN)Compiled with bonus$(NOC)"
 
 addon:	bonus $(A_OBJS) $(P_OBJS) $(HEADER)/ft_printf.h $(HEADER)/get_next_line.h
 	@ar rc $(NAME) $(A_OBJS) $(P_OBJS)
-	@echo "$(GREEN)Libft compiled with addons$(NOC)"
+	@echo "libft: $(GREEN)Libft compiled with addons$(NOC)"
 
 clean:
-	@echo "$(RED)Supressing $(NOC)libft $(RED)object files$(NOC)"
+	@echo "libft: $(RED)Supressing object files$(NOC)"
 	@rm -rf $(OBJ_DIR)
 
 fclean:	clean
-	@echo "$(RED)Supressing $(NOC)$(NAME) $(RED)file$(NOC)"
+	@echo "libft: $(RED)Supressing lib file$(NOC)"
 	@rm -f $(NAME)
 
 re:	fclean all
