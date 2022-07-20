@@ -6,7 +6,7 @@
 #    By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/23 16:16:39 by apigeon           #+#    #+#              #
-#    Updated: 2022/07/20 18:18:03 by apigeon          ###   ########.fr        #
+#    Updated: 2022/07/20 18:20:38 by apigeon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,7 +121,7 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
 	@$(CC) $(CFLAGS) -I$(HEADER) -o $@ -c $<
-	@echo "libft: $(BLUE)Creating object file -> $(WHITE)$(notdir $@)... $(GREEN)[Done]$(NOC)"
+#	@echo "libft: $(BLUE)Creating object file -> $(WHITE)$(notdir $@)... $(GREEN)[Done]$(NOC)"
 
 $(NAME):	$(OBJ_DIR) $(OBJS) $(HEADER)/libft.h
 	@ar rc $(NAME) $(OBJS)
