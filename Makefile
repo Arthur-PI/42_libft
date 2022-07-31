@@ -6,7 +6,7 @@
 #    By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/23 16:16:39 by apigeon           #+#    #+#              #
-#    Updated: 2022/07/20 18:20:38 by apigeon          ###   ########.fr        #
+#    Updated: 2022/07/31 23:09:48 by apigeon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,8 +77,7 @@ ADDON	=	ft_putchar.c \
 			ft_abs.c \
 			ft_min.c \
 			ft_max.c \
-			get_next_line.c \
-			get_next_line_utils.c
+			get_next_line.c
 
 PRINTF	=	ft_printf.c \
 			buffer_handler.c \

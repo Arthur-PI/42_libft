@@ -6,7 +6,7 @@
 /*   By: apigeon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 19:47:40 by apigeon           #+#    #+#             */
-/*   Updated: 2022/05/30 21:46:40 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/07/31 23:11:45 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,5 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_strjoin2(char *s1, char *s2);
-int		ft_strlen2(const char *s);
-size_t	ft_strlcpy2(char *dst, const char *src, size_t dstsize);
 
 #endif
