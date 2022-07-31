@@ -6,7 +6,7 @@
 /*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:33:16 by apigeon           #+#    #+#             */
-/*   Updated: 2022/03/16 10:55:43 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/08/01 00:13:52 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 char	*ft_strdup(const char *s)
 {
+	int		i;
 	int		len;
 	char	*new;
 
@@ -21,6 +22,12 @@ char	*ft_strdup(const char *s)
 	new = malloc(len + 1);
 	if (new == NULL)
 		return (NULL);
-	ft_strlcpy(new, s, len + 1);
+	i = 0;
+	while (s[i])
+	{
+		new[i] = s[i];
+		i++;
+	}
+	new[i] = 0;
 	return (new);
 }

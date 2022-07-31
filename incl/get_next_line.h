@@ -6,7 +6,7 @@
 /*   By: apigeon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 19:47:40 by apigeon           #+#    #+#             */
-/*   Updated: 2022/07/31 23:11:45 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/08/01 00:32:14 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 512
+#  define BUFFER_SIZE 1024
 # endif
 
 # ifndef OPEN_MAX
