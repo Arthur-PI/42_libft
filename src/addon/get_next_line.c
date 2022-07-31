@@ -6,7 +6,7 @@
 /*   By: apigeon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 19:45:57 by apigeon           #+#    #+#             */
-/*   Updated: 2022/07/30 20:01:50 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/07/31 20:10:38 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ static char	*extract_line(char *s, char **leftover)
 		size++;
 	if (size - i == 0)
 		return (line);
+	usleep(10);
 	*leftover = malloc((size - i) + 1);
 	if (*leftover)
 		ft_strlcpy2(*leftover, s + i, (size - i) + 1);
