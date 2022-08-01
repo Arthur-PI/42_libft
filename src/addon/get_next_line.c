@@ -6,11 +6,12 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 20:16:59 by apigeon           #+#    #+#             */
-/*   Updated: 2022/07/31 23:54:29 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/08/01 15:54:23 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static void	copy_until_end(char *src, char *dst)
 {
@@ -65,7 +66,7 @@ static char	*read_line(int fd, char **line, char *save)
 	ret = BUFFER_SIZE;
 	buff = malloc(BUFFER_SIZE + 1);
 	if (!buff)
-		return (0);
+		return (NULL);
 	tmp = ft_strchr(save, '\n');
 	while (tmp == NULL && ret == BUFFER_SIZE)
 	{
@@ -78,6 +79,8 @@ static char	*read_line(int fd, char **line, char *save)
 		save = tmp;
 		tmp = ft_strchr(save, '\n');
 	}
+	if (ret != BUFFER_SIZE && tmp == NULL)
+		tmp = save + ft_strlen(save) - 1;
 	free(buff);
 	return (extract_line_and_save(line, save, (tmp - save) + 1));
 }
