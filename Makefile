@@ -6,13 +6,16 @@
 #    By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/23 16:16:39 by apigeon           #+#    #+#              #
-#    Updated: 2022/07/31 23:09:48 by apigeon          ###   ########.fr        #
+#    Updated: 2022/10/24 19:58:03 by apigeon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ### COMPILATION ###
 CC		= cc
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Wextra
+CFLAGS	+= -Werror
+#CFLAGS	+= -g
+CFLAGS	+= -MMD -MP
 
 ### EXECUTABLE ###
 NAME	= libft.a
@@ -74,6 +77,7 @@ BONUS	=	ft_lstadd_back.c \
 
 ADDON	=	ft_putchar.c \
 			ft_putendl.c \
+			ft_putstr.c \
 			ft_abs.c \
 			ft_min.c \
 			ft_max.c \
@@ -98,6 +102,11 @@ B_OBJS	=	$(addprefix $(OBJ_DIR)/, $(B_SRCS:.c=.o))
 A_OBJS	=	$(addprefix $(OBJ_DIR)/, $(A_SRCS:.c=.o))
 P_OBJS	=	$(addprefix $(OBJ_DIR)/, $(P_SRCS:.c=.o))
 
+DEPS	= 	$(OBJS:.o=.d)
+DEPS	+= 	$(B_OBJS:.o=.d)
+DEPS	+= 	$(A_OBJS:.o=.d)
+DEPS	+= 	$(P_OBJS:.o=.d)
+
 ### COLORS ###
 NOC		= \033[0m
 BLACK	= \033[1;30m
@@ -112,25 +121,20 @@ WHITE	= \033[1;37m
 ### RULES ###
 all:	$(NAME)
 
-$(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)/$(BASE_DIR)
-	@mkdir -p $(OBJ_DIR)/$(BONUS_DIR)
-	@mkdir -p $(OBJ_DIR)/$(ADDON_DIR)
-	@mkdir -p $(OBJ_DIR)/$(PRINTF_DIR)
-
 $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
+	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -I$(HEADER) -o $@ -c $<
 #	@echo "libft: $(BLUE)Creating object file -> $(WHITE)$(notdir $@)... $(GREEN)[Done]$(NOC)"
 
-$(NAME):	$(OBJ_DIR) $(OBJS) $(HEADER)/libft.h
+$(NAME):	$(OBJS)
 	@ar rc $(NAME) $(OBJS)
 	@echo "libft: $(GREEN)Successfully compiled$(NOC)"
 
-bonus:	$(NAME) $(B_OBJS) $(HEADER)/libft.h
+bonus:	$(NAME) $(B_OBJS)
 	@ar rc $(NAME) $(B_OBJS)
 	@echo "libft: $(GREEN)Compiled with bonus$(NOC)"
 
-addon:	bonus $(A_OBJS) $(P_OBJS) $(HEADER)/ft_printf.h $(HEADER)/get_next_line.h
+addon:	bonus $(A_OBJS) $(P_OBJS)
 	@ar rc $(NAME) $(A_OBJS) $(P_OBJS)
 	@echo "libft: $(GREEN)Compiled with addons$(NOC)"
 
@@ -145,3 +149,5 @@ fclean:	clean
 re:	fclean all
 
 .PHONY:	all clean fclean re
+
+-include $(DEPS)
