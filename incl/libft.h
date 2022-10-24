@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:33:58 by apigeon           #+#    #+#             */
-/*   Updated: 2022/10/24 20:00:04 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/10/24 22:44:51 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_putchar(char c);
 void	ft_putendl(const char *s);
 void	ft_putstr(const char *s);
+int		ft_strcmp(const char *s1, const char *s2);
 int		ft_abs(int n);
 int		ft_min(int a, int b);
 int		ft_max(int a, int b);

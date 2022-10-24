@@ -6,7 +6,7 @@
 #    By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/23 16:16:39 by apigeon           #+#    #+#              #
-#    Updated: 2022/10/24 19:58:03 by apigeon          ###   ########.fr        #
+#    Updated: 2022/10/24 22:44:18 by apigeon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,6 +78,7 @@ BONUS	=	ft_lstadd_back.c \
 ADDON	=	ft_putchar.c \
 			ft_putendl.c \
 			ft_putstr.c \
+			ft_strcmp.c \
 			ft_abs.c \
 			ft_min.c \
 			ft_max.c \
