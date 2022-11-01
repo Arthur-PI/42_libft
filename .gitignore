@@ -8,3 +8,5 @@ tags
 main
 main.c
 gnl
+tags.lock
+tags.temp
