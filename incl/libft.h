@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:33:58 by apigeon           #+#    #+#             */
-/*   Updated: 2022/11/01 12:30:32 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/11/03 19:20:12 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,6 @@ int		ft_isspace(int c);
 int		ft_abs(int n);
 int		ft_min(int a, int b);
 int		ft_max(int a, int b);
+char	*ft_strndup(const char *src, int n);
 
 #endif
