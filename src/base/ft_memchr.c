@@ -6,7 +6,7 @@
 /*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 12:24:53 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/28 15:46:34 by apigeon          ###   ########.fr       */
+/*   Updated: 2022/12/11 20:05:24 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (s_s[i] == uc)
-			return ((void *)s_s + i);
+			return ((char *)s_s + i);
 		i++;
 	}
 	return (NULL);

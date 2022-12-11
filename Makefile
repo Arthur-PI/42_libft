@@ -6,15 +6,19 @@
 #    By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/23 16:16:39 by apigeon           #+#    #+#              #
-#    Updated: 2022/11/03 19:19:17 by apigeon          ###   ########.fr        #
+#    Updated: 2022/12/11 20:05:47 by apigeon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ### COMPILATION ###
 CC		= cc
 CFLAGS	= -Wall -Wextra
+CFLAGS	+= -Wshadow -Wpedantic -Wuninitialized -Wmissing-include-dirs -Wundef -Winvalid-pch
+CFLAGS	+= -Winit-self -Wswitch-enum -Wswitch-default -Wformat=2 -Wformat-nonliteral -Wformat-security -Wformat-y2k
+CFLAGS	+= -Wdouble-promotion -Wfloat-equal -Wpointer-arith
+CFLAGS	+= -Wconditional-uninitialized
 CFLAGS	+= -Werror
-#CFLAGS	+= -g
+CFLAGS	+= -g
 CFLAGS	+= -MMD -MP
 
 ### EXECUTABLE ###
