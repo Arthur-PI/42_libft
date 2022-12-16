@@ -16,10 +16,10 @@
 # include "libft.h"
 # include <stdarg.h>
 
-# define APPEND	0b0001
-# define FLUSH	0b0010
-# define FREE	0b0100
-# define CHAR	0b1000
+# define APPEND	1
+# define FLUSH	2
+# define FREE	4
+# define CHAR	8
 
 # define OPTIONS "cspdiuxX%"
 # define O_CHAR 'c'

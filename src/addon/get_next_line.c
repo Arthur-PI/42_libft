@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static void	copy_until_end(char *src, char *dst)
 {
@@ -88,13 +87,21 @@ static char	*read_line(int fd, char **line, char *save)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*save[OPEN_MAX] = {0};
+	char		*tmp;
+	static char	save[OPEN_MAX][BUFFER_SIZE + 1] = {0};
 
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	line = NULL;
 	if (!save[fd])
-		save[fd] = ft_strdup("");
-	save[fd] = read_line(fd, &line, save[fd]);
+		save[fd][0] = 0;
+	tmp = read_line(fd, &line, ft_strdup(save[fd]));
+	if (!tmp)
+		save[fd][0] = 0;
+	else
+	{
+		ft_strlcpy(save[fd], tmp, BUFFER_SIZE + 1);	
+		free(tmp);
+	}
 	return (line);
 }
