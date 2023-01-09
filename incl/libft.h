@@ -16,9 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-# include "ft_printf.h"
-# include "get_next_line.h"
-
 // ==== Part 1 functions ====
 
 void	ft_bzero(void *s, size_t n);

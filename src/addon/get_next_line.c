@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 static void	copy_until_end(char *src, char *dst)
 {
@@ -100,7 +100,7 @@ char	*get_next_line(int fd)
 		save[fd][0] = 0;
 	else
 	{
-		ft_strlcpy(save[fd], tmp, BUFFER_SIZE + 1);	
+		ft_strlcpy(save[fd], tmp, BUFFER_SIZE + 1);
 		free(tmp);
 	}
 	return (line);
